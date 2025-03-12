@@ -89,12 +89,12 @@ const Roof = () => {
                         </mesh>
                     </group>
                     
-                    <group position={[buildingLength + buildingWidth / 2 + 1, buildingWidth / 2 * Math.tan(roofAngle) + wallHeight + wallDepth / Math.cos(roofAngle) + 1, 0]}>
+                    <group position={[buildingLength / 2 + 1, buildingWidth / 2 * Math.tan(roofAngle) + wallHeight + wallDepth / Math.cos(roofAngle) + 1, 0]}>
                         <Billboard>
-                            <RoundedBox args={[5, 1.2, -0.01]} radius={0.3}  scale={[1, 1, 0.1]}>
+                            <RoundedBox args={[3, 0.8, -0.01]} radius={0.3}  scale={[1, 1, 0.1]}>
                                 <meshStandardMaterial color={'#2270B3'}  />
                             </RoundedBox>
-                            <Text fontSize={0.8} color="white">
+                            <Text fontSize={0.5} color="white">
                                 F r o n t
                             </Text>
                         </Billboard>
@@ -103,16 +103,16 @@ const Roof = () => {
                             <meshStandardMaterial color={'#2270B3'}  />
                         </mesh>
                     </group>
-                    <group position={[0, buildingWidth / 2 * Math.tan(roofAngle) + wallHeight + wallDepth / Math.cos(roofAngle) + 1, -buildingWidth / 2 - buildingLength - 1]}>
+                    <group position={[-(buildingLength / 2 + 1), buildingWidth / 2 * Math.tan(roofAngle) + wallHeight + wallDepth / Math.cos(roofAngle) + 1, 0]}>
                         <Billboard>
-                            <RoundedBox args={[5, 1.2, -0.01]} radius={0.3}  scale={[1, 1, 0.1]}>
+                            <RoundedBox args={[3, 0.8, -0.01]} radius={0.3}  scale={[1, 1, 0.1]}>
                                 <meshStandardMaterial color={'#2270B3'}  />
                             </RoundedBox>
-                            <Text fontSize={0.8} color="white">
-                                S i d e
+                            <Text fontSize={0.5} color="white">
+                                B a c k
                             </Text>
                         </Billboard>
-                        <mesh position={[0, -2, 0.5]} rotation={[-0.1, 0, 0]}>
+                        <mesh position={[0.5, -2, 0]} rotation={[0, 0, 0.1]}>
                             <cylinderGeometry args={[0.03, 0.03, 4]} />
                             <meshStandardMaterial color={'#2270B3'}  />
                         </mesh>
