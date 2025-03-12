@@ -11,6 +11,7 @@ import { ComplexRightRoof } from '../walls/complexRightRoof';
 import { ComplexLeftRoof } from '../walls/complexLeftRoof';
 import { Geometry, Base, Subtraction } from '@react-three/csg';
 import { cutRidge } from '../walls/cutRidge';
+import { Text, Billboard, RoundedBox } from '@react-three/drei';
 
 const Roof = () => {
 
@@ -157,6 +158,34 @@ const Roof = () => {
                         </mesh>
                     </group>
                         
+                    <group position={[buildingLength + buildingWidth / 2 + 1, buildingWidth / 2 * Math.tan(roofAngle) + wallHeight + wallDepth / Math.cos(roofAngle) + 1, 0]}>
+                        <Billboard>
+                            <RoundedBox args={[5, 1.2, -0.01]} radius={0.3}  scale={[1, 1, 0.1]}>
+                                <meshStandardMaterial color={'#2270B3'}  />
+                            </RoundedBox>
+                            <Text fontSize={0.8} color="white">
+                                F r o n t
+                            </Text>
+                        </Billboard>
+                        <mesh position={[-0.5, -2, 0]} rotation={[0, 0, -0.1]}>
+                            <cylinderGeometry args={[0.03, 0.03, 4]} />
+                            <meshStandardMaterial color={'#2270B3'}  />
+                        </mesh>
+                    </group>
+                    <group position={[0, buildingWidth / 2 * Math.tan(roofAngle) + wallHeight + wallDepth / Math.cos(roofAngle) + 1, -buildingWidth / 2 - buildingLength - 1]}>
+                        <Billboard>
+                            <RoundedBox args={[5, 1.2, -0.01]} radius={0.3}  scale={[1, 1, 0.1]}>
+                                <meshStandardMaterial color={'#2270B3'}  />
+                            </RoundedBox>
+                            <Text fontSize={0.8} color="white">
+                                S i d e
+                            </Text>
+                        </Billboard>
+                        <mesh position={[0, -2, 0.5]} rotation={[-0.1, 0, 0]}>
+                            <cylinderGeometry args={[0.03, 0.03, 4]} />
+                            <meshStandardMaterial color={'#2270B3'}  />
+                        </mesh>
+                    </group>
                 </group>
             }
         </group>
