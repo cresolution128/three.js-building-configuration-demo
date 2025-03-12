@@ -86,7 +86,7 @@ const MainView = () =>{
                     maxDistance={80}
                 />
                 <fog attach={"fog"} color={"gray"} near={40} far={70} />
-                <axesHelper args={[50, 50, 50]} />
+                {/* <axesHelper args={[50, 50, 50]} /> */}
             </Canvas>
             <ButtonGroup variant="contained" aria-label="Basic button group" className="absolute z-10 p-1 right-20 top-20">
                 <Button className="text-black bg-white opacity-80" onClick={() => handleCamera('front')}>Front</Button>
